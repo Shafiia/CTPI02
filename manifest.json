@@ -1,0 +1,11 @@
+{
+    "name": "Hearthstone Info", 
+    "version": "1.0.0",
+    "description": "This is my first extension", 
+    "manifest_version": 3,
+    "author": "Shafia", 
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Hearthstone Info"
+    }
+}
