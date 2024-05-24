@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UserTune</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png"/><h1>UserTune</h1>
+        <div class="subtitle">
+            <p>
+            Accessibility web browsing, redefined</p></div>
+        <div class="c1">
+        <div class="tab">
+            <button class="tablinks" id="currentSettingsBtn">Current Settings</button>
+            <button class="tablinks" id="modifySettingsBtn">Modify Settings</button>
+        </div>
+        <br>
+        <br><br>
+
+        <div id="CurrentSettings" class="tabcontent">
+            <div class="options">
+                <label><input type="checkbox"> Color Blindness</label><br>
+                <label><input type="checkbox"> Dyslexia</label><br>
+                <label><input type="checkbox"> Tremor Disorder</label><br>
+                <label><input type="checkbox"> Tunnel Vision</label><br>
+                <label><input type="checkbox"> Blurry Vision</label><br>
+            </div>
+            <button id="view-live-page-btn">View Live Page</button>
+        </div>
+
+        <div id="ModifySettings" class="tabcontent">
+            <div class="options">
+                <p>This is the modify settings page</p>
+            </div>
+            <button id="view-live-page-btn">View Live Page</button>
+        </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

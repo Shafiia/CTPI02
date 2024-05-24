@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 350px;
+    background: #E5EEFF;
+    align-items: center;
+}
+
+
+
+.container {
+    text-align: center;
+    align-items: center;
+    background-color: #E5EEFF;
+}
+
+.c1 {
+    text-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 3px solid #2C6DEA;
+
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    align-items: center;
+    color: #000;
+    font-family: Inika;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.subtitle {
+    color: #000;
+    font-family: Inika;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+p {
+    font-size: 12px;
+    color: #777;
+    margin: 0 0 20px 0;
+    align-items: center;
+}
+
+
+
+.tab button {
+    background-color: #ddd;
+    float: left;
+    border: 1px solid  #ddd;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    border-radius: 8px 8px 0 0;
+    align-items: center;
+}
+
+.tab button:hover {
+    background-color: #a7cdff;
+}
+
+.tab button.active {
+    background-color: #ffffff;
+    border-bottom: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.tabcontent {
+    display: none;
+    border-top: none;
+    align-items: center;
+}
+
+.options {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button#view-live-page-btn {
+    width: 90%;
+    background: #1C1756;
+}
