@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #c7e0fb;
+}
+
+.form_container {
+    background-color: white;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    height: auto;
+}
+
+.form_container img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 16px;
+}
+
+.form_container h3 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 42px;
+    margin: 0;
+}
+
+.line {
+    width: 100%;
+    max-width: 425px;
+    height: 1.5px;
+    background-color: rgb(213, 204, 204);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_container_login-signup {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.form_container_login-signup ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    font-size: 24px;
+}
+
+.form_container_login-signup ul li {
+    display: inline;
+}
+
+.form_container_login-signup ul li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="cpassword"] {
+    width: calc(100% - 40px);
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    background-color: #d4d4d4;
+    font-size: 22px;
+}
+
+.name input[type="text"] {
+    width: 41%; 
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #d4d4d4;
+    font-size: 22px;
+}
+
+.checkbox_container {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.checkbox_container label {
+    
+    font-size: 18px;
+}
+
+a{
+    color: inline;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+.form_container .form_btn {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #070039;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.form_btn:hover {
+    background-color: #0056b3;
+}
+
+.login_forget {
+    margin: 10px 0;
+    margin-left: 5px;
+    text-align: left;
+    display: block;
+    font-size: 24px;
+}
