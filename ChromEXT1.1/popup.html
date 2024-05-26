@@ -1,42 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <title>UserTune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
+
 <body>
     <div class="container">
-        <img src="logo.png"/><h1>UserTune</h1>
+        <img src="logo.png" alt="logo image">
+        <h1>UserTune</h1>
         <div class="subtitle">
             <p>
-            Accessibility web browsing, redefined</p></div>
+                Accessibility web browsing, redefined</p>
+        </div>
         <div class="c1">
-        <div class="tab">
-            <button class="tablinks" id="currentSettingsBtn">Current Settings</button>
-            <button class="tablinks" id="modifySettingsBtn">Modify Settings</button>
-        </div>
-        <br>
-        <br><br>
-
-        <div id="CurrentSettings" class="tabcontent">
-            <div class="options">
-                <label><input type="checkbox"> Color Blindness</label><br>
-                <label><input type="checkbox"> Dyslexia</label><br>
-                <label><input type="checkbox"> Tremor Disorder</label><br>
-                <label><input type="checkbox"> Tunnel Vision</label><br>
-                <label><input type="checkbox"> Blurry Vision</label><br>
+            <div class="tab">
+                <button type="button" class="tablinks" id="currentSettingsBtn">Current Settings</button>
+                <button type="button" class="tablinks" id="modifySettingsBtn">Modify Settings</button>
             </div>
-            <button id="view-live-page-btn">View Live Page</button>
-        </div>
+            <br>
+            <br><br>
 
-        <div id="ModifySettings" class="tabcontent">
-            <div class="options">
-                <p>This is the modify settings page</p>
+            <div id="CurrentSettings" class="tabcontent">
+                <div class="options">
+                    <label><input type="checkbox"> Color Blindness</label><br>
+                    <label><input type="checkbox"> Dyslexia</label><br>
+                    <label><input type="checkbox"> Tremor Disorder</label><br>
+                    <label><input type="checkbox"> Tunnel Vision</label><br>
+                    <label><input type="checkbox"> Blurry Vision</label><br>
+                </div>
+                <button type="submit" id="view-live-page-btn">View Live Page</button>
             </div>
-            <button id="view-live-page-btn">View Live Page</button>
-        </div>
+
+            <div id="ModifySettings" class="tabcontent">
+                <div class="options">
+                    <div class="fontStyle">
+                        <label for="fontFamily" class="selectFont">Select font style:</label>
+                        <select id="fontFamily" name="fontlist">
+                            <option value="default">Default</option>
+                            <option value="serif">Serif</option>
+                            <option value="sansSerif">Sans-serif</option>
+                            <option value="monospace">Monospace</option>
+                            <option value="cursive">Cursive</option>
+                            <option value="fantasy">Fantasy</option>
+                        </select>
+                    </div>
+
+                    <div class="fontSize">
+                        <div class="adjustSize">
+                            <button type="button" class="fontBtn">A-</button><span>Font Size</span><button type="button"
+                                class="fontBtn">A+</button>
+                        </div>
+                        <button type="button" class="resetBtn">
+                            <i class="fa-solid fa-rotate-right resetIcon"></i><span>Reset</span>
+                        </button>
+                    </div>
+
+                    <div class="pageZoom">
+                        <button type="button" class="zoomBtn"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom
+                            in</button>
+                        <button type="button" class="zoomBtn"><i class="fa-solid fa-magnifying-glass-minus"></i> Zoom
+                            out</button>
+                        <button type="button" class="resetBtn">
+                            <i class="fa-solid fa-rotate-right resetIcon"></i><span>Reset</span>
+                        </button>
+                    </div>
+
+                    <div class="contrast">
+                        <div class="setContrast">
+                            <i class="fa-solid fa-circle-half-stroke contrastIcon"></i>
+                            <div id="highContrastText">High Contrast Mode <span class="editContrast">edit</span></div>
+                        </div>
+                        <div class="toggleBtn">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="darkMode">
+                        <div class="setContrast">
+                            <i class="fa-solid fa-moon moonIcon"></i>
+                            <div id="darkModeText">Dark Mode </div>
+                        </div>
+                        <div class="toggleBtn">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="colorBlind">
+                        <p>Color Blindness: </p>
+                        <div class="colorOptions">
+                            <div class="radio-group-item">
+
+                                <input type="radio" name="radio" value="none" id="radio1" checked>
+                                <label for="radio1">None</label>
+                            </div>
+                            <div class="radio-group-item">
+
+                                <input type="radio" name="radio" value="redgreen" id="radio2"><label
+                                    for="radio2">Red-Green</label>
+                            </div>
+                            <div class="radio-group-item">
+
+                                <input type="radio" name="radio" value="blueyellow" id="radio3"><label
+                                    for="radio3">Blue-Yellow</label>
+                            </div>
+                            <div class="radio-group-item">
+
+                                <input type="radio" name="radio" value="mono" id="radio4"><label
+                                    for="radio4">Monochromacy</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <button type="submit" id="view-live-page-btn">View Live Page</button>
+            </div>
+
         </div>
     </div>
     <script src="popup.js"></script>
 </body>
+
 </html>
