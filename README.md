@@ -13,6 +13,7 @@ git clone https://github.com/Shafiia/CTPI02.git
 ## Deploy
 
 #### Go to Manage extensions in Chrome browser
+#### Turn on 'Developer Mode'
 #### Click 'Load unpacked'
 #### Select folder \CTPI02\ChromEXT1.1
 
