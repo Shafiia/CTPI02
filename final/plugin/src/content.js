@@ -17,8 +17,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         } else {
           changeColors(null);
         }
-        if (settings.tremorDisorder) applyTremorDisorderStyles();
-        if (settings.tunnelVision) applyTunnelVisionStyles();
         if (settings.lowVision && settings.diopterValue !== null) {
           isLVSelected = true; //Flag for lv settings
           applyLowVisionStyles(settings.diopterValue); // Handle low vision based on diopter value
@@ -32,11 +30,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         if (settings.zoomLevel) applyZoom(settings.zoomLevel);
         if (settings.highContrast) adjustContrast(settings.highContrast);
         if (settings.darkMode) adjustDarkMode(settings.darkMode);
-        if (request.settings.colorBlindnessType) {
-          appendSVG();
-          console.log(settings.colorBlindnessType);
-          changeColors(request.settings.colorBlindnessType);
-        }
       }
     });
   }
@@ -50,8 +43,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === "resetZoom") applyZoom((zoomLevel = 1));
   if (request.action === "toggleHighContrast") adjustContrast(request.enabled);
   if (request.action === "toggleDarkMode") adjustDarkMode(request.enabled);
-  if (request.action === "changeColorBlindness")
-    applyColorBlindnessMode(request.type);
 });
 
 const fontPath = chrome.runtime.getURL("fonts/OpenDyslexic-Regular.woff");
@@ -393,41 +384,6 @@ function applyDyslexiaStyles() {
     .catch(function (error) {
       console.error("Error loading the font: ", error);
     });
-}
-
-function applyTremorDisorderStyles() {
-  document.body.style.fontSize = "20px";
-}
-
-function applyTunnelVisionStyles() {
-  // Create the overlay if it doesn't exist
-  let overlay = document.getElementById("tunnel-vision-overlay");
-  if (!overlay) {
-    overlay = document.createElement("div");
-    overlay.id = "tunnel-vision-overlay";
-    document.body.appendChild(overlay);
-
-    // Style the overlay
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.95)";
-    overlay.style.pointerEvents = "none"; // Allow interaction with elements underneath
-    overlay.style.zIndex = "9999"; // Ensure the overlay is on top
-    overlay.style.clipPath = "circle(150px at 50% 50%)"; // Initial clip path
-  }
-
-  // Update the circle around the mouse
-  document.onmousemove = function (event) {
-    let x = event.clientX;
-    let y = event.clientY;
-    overlay.style.clipPath = `circle(150px at ${x}px ${y}px)`;
-  };
-
-  // High contrast for text
-  document.body.style.color = "#FFFFFF"; // White text for contrast
 }
 
 // Add this function to modify settings

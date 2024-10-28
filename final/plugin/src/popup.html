@@ -18,7 +18,7 @@
             <p>Accessibility web browsing, redefined</p>
         </div>
         <hr>
-        <div class="login-signup">
+        <div class="login-signup" id="login-signup">
             <!--toggle between login and signup-->
             <div class="nav">
                 <ul id="navLinks">
@@ -108,8 +108,6 @@
                             </select>
                         </div>
                         <label><input type="checkbox" id="dyslexia"> Dyslexia</label><br>
-                        <label><input type="checkbox" id="tremorDisorder"> Tremor Disorder</label><br>
-                        <label><input type="checkbox" id="tunnelVision"> Tunnel Vision</label><br>
                         <label><input type="checkbox" id="elderly"> Elderly</label><br>
                         <label><input type="checkbox" id="lowVision"> Low
                             Vision</label><br>
@@ -162,7 +160,7 @@
                         <div class="contrast">
                             <div class="setContrast">
                                 <i class="fa-solid fa-circle-half-stroke contrastIcon"></i>
-                                <div id="highContrastText">High Contrast Mode <span class="editContrast">edit</span>
+                                <div id="highContrastText">High Contrast Mode
                                 </div>
                             </div>
                             <div class="toggleBtn">
@@ -185,37 +183,12 @@
                                 </label>
                             </div>
                         </div>
-
-                        <div class="colorBlind">
-                            <p>Color Blindness: </p>
-                            <div class="colorOptions">
-                                <div class="radio-group-item">
-                                    <input type="radio" name="colorBlindnessType" value="none" id="radio1" checked>
-                                    <label for="radio1">None</label>
-                                </div>
-                                <div class="radio-group-item">
-                                    <input type="radio" name="colorBlindnessType" value="redgreen" id="radio2">
-                                    <label for="radio2">Red-Green</label>
-                                </div>
-                                <div class="radio-group-item">
-                                    <input type="radio" name="colorBlindnessType" value="blueyellow" id="radio3">
-                                    <label for="radio3">Blue-Yellow</label>
-                                </div>
-                                <div class="radio-group-item">
-                                    <input type="radio" name="colorBlindnessType" value="mono" id="radio4">
-                                    <label for="radio4">Monochromacy</label>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <button type="submit" id="mdf-settings-btn">Modify Settings</button>
+                <button type="submit" id="mdf-settings-btn">View Live Page</button>
             </form>
         </div>
     </div>
-
-    <!-- Button to View Live Page -->
-    <!--button type="button" id="view-live-page-btn">View Live Page</button-->
 
     <!-- Script for handling tab switching and settings -->
     <script src="popup.js"></script>

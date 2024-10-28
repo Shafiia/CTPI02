@@ -55,7 +55,7 @@ const errorSignup = document.getElementById("errorSignup");
 //login function
 async function loginUser(email, password) {
   const errorMessage = document.getElementById("errorMessage");
-  const loginForm = document.getElementById("loginForm");
+  const loginForm = document.getElementById("login-signup");
   try {
     const response = await fetch("http://127.0.0.1:8000/api/login/", {
       method: "POST",
@@ -80,18 +80,13 @@ async function loginUser(email, password) {
         const welcomeMessage = document.createElement("h2");
         welcomeMessage.textContent = `Welcome ${data.first_name}!`;
         settings.prepend(welcomeMessage);
-        //create hr line
-        const hr = document.createElement("hr");
-        settings.insertBefore(hr, settings.children[1]);
 
         //apply existing setting, retrieving from db
         if (data.needs) {
           console.log("Needs data:", data.needs);
           const needCheckboxes = {
             dyslexia: "dyslexia",
-            tremor_disorder: "tremorDisorder",
             elderly: "elderly",
-            tunnel_vision: "tunnelVision",
             low_vision: "lowVision",
           };
           for (const [need, elementId] of Object.entries(needCheckboxes)) {
@@ -228,8 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const settings = {
         dyslexia: document.getElementById("dyslexia").checked,
         colorBlindness: document.getElementById("colorBlindness").value,
-        tremorDisorder: document.getElementById("tremorDisorder").checked,
-        tunnelVision: document.getElementById("tunnelVision").checked,
         lowVision: document.getElementById("lowVision").checked,
         elderly: document.getElementById("elderly").checked,
         diopterValue: document.getElementById("diopterValue").value || null,
@@ -256,9 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const settings = result.settings;
       document.getElementById("dyslexia").checked = settings.dyslexia;
       document.getElementById("colorBlindness").value = settings.colorBlindness;
-      document.getElementById("tremorDisorder").checked =
-        settings.tremorDisorder;
-      document.getElementById("tunnelVision").checked = settings.tunnelVision;
+
       document.getElementById("lowVision").checked = settings.lowVision;
       document.getElementById("elderly").checked = settings.elderly;
 
@@ -274,21 +265,38 @@ document.addEventListener("DOMContentLoaded", function () {
       diopterOutput.textContent = document.getElementById("diopterValue").value;
     }
   });
+  function switchTab(evt, tabName) {
+    var i, tabcontent, tablinks;
 
-  // Tab switching settings
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Event listeners for tab buttons
   document
     .getElementById("currentSettingsBtn")
-    .addEventListener("click", function () {
-      document.getElementById("CurrentSettings").style.display = "block";
-      document.getElementById("ModifySettings").style.display = "none";
+    .addEventListener("click", function (event) {
+      switchTab(event, "CurrentSettings");
     });
 
   document
     .getElementById("modifySettingsBtn")
-    .addEventListener("click", function () {
-      document.getElementById("CurrentSettings").style.display = "none";
-      document.getElementById("ModifySettings").style.display = "block";
+    .addEventListener("click", function (event) {
+      switchTab(event, "ModifySettings");
     });
+
+  // Set default active tab on page load
+  document.getElementById("currentSettingsBtn").click();
   //low vision toggle
   //signup-lv
   document
@@ -345,30 +353,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // For Settings Area
     updateDiopterOutput("diopterValue", "diopterOutput");
   });
-  // Color blindness toggle
-  //signup-colorblindness
-  document
-    .getElementById("colorBlindnessNeed")
-    .addEventListener("click", function () {
-      toggleColorBlindnessDropdown(
-        "colorBlindnessNeed",
-        "colorBlindnessNeedOptions"
-      );
-    });
-  //setting-colorblindness
-  document
-    .getElementById("colorBlindness")
-    .addEventListener("click", function () {
-      toggleColorBlindnessDropdown("colorBlindness", "colorBlindnessOptions");
-    });
-
-  function toggleColorBlindnessDropdown(checkboxId, dropdownId) {
-    const dropdown = document.getElementById(dropdownId);
-    const checkbox = document.getElementById(checkboxId);
-    if (checkbox && dropdown) {
-      dropdown.style.display = checkbox.checked ? "block" : "none";
-    }
-  }
 
   // Font size adjustment functions
   function adjustFontSize(action) {
